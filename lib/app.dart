@@ -13,14 +13,14 @@ import 'core/localization/app_localizations.dart';
 import 'core/routing/app_router.dart';
 import 'core/utils/theme/app_theme.dart';
 
-class AtozNewAdmin extends StatefulWidget {
-  const AtozNewAdmin({super.key});
+class LumiraWeb extends StatefulWidget {
+  const LumiraWeb({super.key});
 
   @override
-  State<AtozNewAdmin> createState() => _AtozNewAdminState();
+  State<LumiraWeb> createState() => _LumiraWebState();
 }
 
-class _AtozNewAdminState extends State<AtozNewAdmin> {
+class _LumiraWebState extends State<LumiraWeb> {
   @override
   Widget build(context) {
     return ScreenUtilInit(
@@ -32,7 +32,6 @@ class _AtozNewAdminState extends State<AtozNewAdmin> {
         return MultiBlocProvider(
           providers: [
             BlocProvider(create: (context) => getIt.get<SharedCubit>()),
-
           ],
           child: SizeProvider(
             baseSize: const Size(385, 812),

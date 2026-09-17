@@ -30,7 +30,7 @@ abstract class AppConfig {
   static const String apiVersion = 'v1/';
 
   //? replace bundleId with your app bundle id
-  static String bundleId = 'com.mdsoft.atoznewadmin';
+  static String bundleId = 'com.mdsoft.LumiraWeb';
 
   /// *************** Update Manager ***************** ///
 

@@ -1,19 +1,30 @@
-// import 'dart:convert';
-// import 'package:flutter/services.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
 
-// class JsonDataService {
-//   static Map<String, dynamic>? _cachedData;
+class JsonDataService {
+  static Map<String, dynamic>? _cachedData;
 
-//   static Future<Map<String, dynamic>> _readFromBundle() async {
-//     final String response = await rootBundle.loadString('js.json');
-//     return json.decode(response) as Map<String, dynamic>;
-//   }
+  static Future<Map<String, dynamic>> _readFromBundle() async {
+    final String response = await rootBundle.loadString('js.json');
+    return json.decode(response) as Map<String, dynamic>;
+  }
 
-//   static Future<Map<String, dynamic>> _getJsonData() async {
-//     if (_cachedData != null) return _cachedData!;
-//     _cachedData = await _readFromBundle();
-//     return _cachedData!;
-//   }
+  static Future<Map<String, dynamic>> _getJsonData() async {
+    if (_cachedData != null) return _cachedData!;
+    _cachedData = await _readFromBundle();
+    return _cachedData!;
+  }
+
+  static Future<List<dynamic>> getGovernorates() async {
+    final data = await _getJsonData();
+    return (data['governorates'] as List<dynamic>?) ?? [];
+  }
+
+  static Future<List<dynamic>> getAreasByGovernorateId(String governorateId) async {
+    final data = await _getJsonData();
+    final key = 'areas?governorateId=$governorateId';
+    return (data[key] as List<dynamic>?) ?? [];
+  }
 
 //   static Future<Map<String, dynamic>> _refreshJsonData() async {
 //     _cachedData = await _readFromBundle();
@@ -450,4 +461,4 @@
 //       }
 //     ];
 //   }
-// }
+}

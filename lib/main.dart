@@ -25,7 +25,6 @@ void main() async {
   await ScreenUtil.ensureScreenSize();
   await setupDependencyInjection();
 
-
   // Configure window settings for Desktop platforms using window_manager
   // if (!kIsWeb) {
   //   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
@@ -51,5 +50,5 @@ void main() async {
   //   await NotificationManager.initialize();
   // }
 
-  runApp(const AtozNewAdmin());
+  runApp(const LumiraWeb());
 }
