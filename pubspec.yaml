@@ -69,3 +69,7 @@ flutter:
           weight: 400
         - asset: assets/fonts/lantx_light.otf
           weight: 300
+
+
+dependency_overrides:
+  meta: ^1.19.0

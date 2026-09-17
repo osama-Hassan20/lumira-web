@@ -1,8 +1,7 @@
-﻿/// Ù…Ø³Ø§Ø±Ø§Øª Ø§Ù„ØªØ·Ø¨ÙŠÙ‚ (paths) â€” ØªÙØ³ØªØ®Ø¯Ù… Ù„Ù„Ù€ GoRouter
+/// Ù…Ø³Ø§Ø±Ø§Øª Ø§Ù„ØªØ·Ø¨ÙŠÙ‚ (paths) â€” ØªÙØ³ØªØ®Ø¯Ù… Ù„Ù„Ù€ GoRouter
 class Routes {
   Routes._();
 
-  static const String splash = '/';
   static const String login = '/login';
 
   // â”€â”€â”€ Main app â”€â”€â”€
@@ -44,7 +43,6 @@ class Routes {
 class RouteNames {
   RouteNames._();
 
-  static const String splash = 'splash';
   static const String login = 'login';
   static const String home = 'home';
 

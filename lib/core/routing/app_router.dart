@@ -9,7 +9,6 @@ import '../storage/shared_prefs.dart';
 import '../utils/constants/app_strings.dart';
 import 'page_transitions.dart';
 import 'routes.dart';
-import '../../features/splash/presentation/screens/splash_screen.dart';
 
 // ───────────────────────────────────────────────────────────────────────────
 final GlobalKey<NavigatorState> parentNavKey = GlobalKey<NavigatorState>(
@@ -22,7 +21,7 @@ final GlobalKey<ScaffoldMessengerState> rootScaffoldMessengerKey =
 final GoRouter router = GoRouter(
   navigatorKey: parentNavKey,
   observers: [routeObserver],
-  initialLocation: Routes.splash,
+  initialLocation: Routes.login,
   debugLogDiagnostics: true,
 
   // ─── Auth Redirect ─────────────────────────────────────────────────────────
@@ -33,19 +32,12 @@ final GoRouter router = GoRouter(
         SharedPrefHelper.getData(key: AppStrings.isLoggedIn) == true;
     final isGoingToLogin = location == Routes.login;
 
-    if (location == Routes.splash) return null;
     if (!isLoggedIn && !isGoingToLogin) return Routes.login;
     if (isLoggedIn && isGoingToLogin) return Routes.home;
     return null;
   },
 
   routes: [
-    GoRoute(
-      path: Routes.splash,
-      name: RouteNames.splash,
-      pageBuilder: (context, state) => const NoTransitionPage(child: SplashScreen()),
-    ),
-
     // ─── Login ───────────────────────────────────────────────────────────────
     GoRoute(
       path: Routes.login,
